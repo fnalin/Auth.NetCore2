@@ -2,12 +2,14 @@
 using FanSoft.Auth.Domain.Contracts.Data;
 using FanSoft.Auth.Domain.Contracts.Repositories;
 using FanSoft.Auth.Domain.Entities;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 
 namespace FanSoft.Auth.Api.Controllers
 {
     [Route("api/v1/clientes")]
+    [Authorize("Bearer")]
     public class ClientesController : BaseController
     {
         private readonly IClienteRepository _clienteRepository;

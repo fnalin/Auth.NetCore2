@@ -5,10 +5,12 @@ using FanSoft.Auth.Domain.Entities;
 using Microsoft.AspNetCore.Mvc;
 using System.Threading.Tasks;
 using System.Linq;
+using Microsoft.AspNetCore.Authorization;
 
 namespace FanSoft.Auth.Api.Controllers
 {
     [Route("api/v1/usuarios")]
+    [Authorize("Bearer")]
     public class UsuariosController:BaseController
     {
         private readonly IUsuarioRepository _usuarioRepository;
