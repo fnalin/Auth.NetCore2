@@ -23,5 +23,10 @@ namespace FanSoft.Auth.Domain.Entities
             Nome = nome;
             Senha = senha.Encrypt();
         }
+
+        public bool IsAuthenticate(string senha)
+        {
+            return Senha == senha;
+        }
     }
 }
